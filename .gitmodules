@@ -1,0 +1,6 @@
+[submodule "aerial_vehicle/Firmware"]
+	path = aerial_vehicle/Firmware
+	url = https://github.com/RaulQT/Firmware.git
+[submodule "ground_vehicle/como"]
+	path = ground_vehicle/como
+	url = https://github.com/RaulQT/como.git
