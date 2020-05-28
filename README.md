@@ -3,8 +3,6 @@ This repository contains the implementation of SAVIOR on an aerial and ground ve
 
 ## Getting Started
 
-### Prerequisites
-
 ### Installing
 Clone the current version of the project:
 ```
@@ -15,3 +13,51 @@ Obtain all the submodules:
 ```
 git submodule update --init --recursive
 ```
+
+### Setting up the environment
+Become a member of the group dialout:
+```
+sudo usermod -a -G dialout $USER
+```
+Download the script "ubuntu_sim_nuttx.sh" from the following link and run it (https://raw.githubusercontent.com/PX4/Devguide/v1.9.0/build_scripts/ubuntu_sim_nuttx.sh):
+```
+chmod +x ubuntu_sim_nuttx.sh
+./ubuntu_sim_nuttx.sh
+```
+
+### Installing dependencies
+Since once of the dependencies requires Python version 3.5 or above, make sure you use a version of Python that satisfies this requirement.
+
+Install pip3 if your distribution did not come with it:
+```
+sudo apt install python3-pip
+```
+Then, proceed to install the dependencies:
+```
+sudo apt-get install python3-jinja2
+
+sudo apt-get install python3-empy
+
+sudo pip3 install catkin_pkg
+
+sudo pip3 install numpy toml	(make sure you are running python 3.5 or above)
+
+sudo pip3 install pyyaml
+```
+In order to compile for Intel Aero, we need to download and install the compiler for ARM Cortex processors. The compiler can be found here: https://packages.ubuntu.com/xenial/gcc-arm-none-eabi
+
+Detailed instructions are also found in: https://dev.px4.io/v1.9.0/en/setup/dev_env_linux.html.
+
+### Compile modules for simulation
+Simply run the make on the Firmware folder:
+```
+make
+```
+The make command will by default build the code for the px4_sitl_default configuration.
+
+### Compile firmware for Intel Aero:
+Run the following command:
+```
+make intel_aerofc-v1_default
+```
+The make command will build the code for the Intel Aero platform.
