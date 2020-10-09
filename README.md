@@ -61,3 +61,8 @@ Run the following command:
 make intel_aerofc-v1_default
 ```
 The make command will build the code for the Intel Aero platform.
+
+### Acknowledgments
+
+We thank the anonymous reviewers for their insightful com- ments. This work was partially supported by National Sci- ence Foundation (NSF) Awards 1834215, 1834216, 1929410, 1931573 and the Air Force Office of Scientific Research under award number FA9550-17-1-0135.
+
